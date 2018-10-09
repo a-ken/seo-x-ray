@@ -81,7 +81,7 @@ export class Scanner {
         }
     }
 
-    _save(source: any, message: string): Promise<void> {
+    private _save(source: any, message: string): Promise<void> {
         let stream: fs.WriteStream;
 
         if (typeof source === 'string') {

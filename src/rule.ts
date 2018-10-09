@@ -130,11 +130,11 @@ class H1MoreThanOneRule extends BaseRule {
 }
 
 export const Rule = {
-    imgWithoutAltAttrRule: new ImgWithoutAltAttrRule(),
-    aWithoutRelAttrRule: new AWithoutRelAttrRule(),
-    headerNoTitleRule: new HeaderNoTitleRule(),
-    headerNoMetaDescriptionsRule: new HeaderNoMetaDescriptionsRule(),
-    headerNoMetaKeywordsRule: new HeaderNoMetaKeywordsRule(),
-    strongMoreThanRule: new StrongMoreThanRule(),
-    h1MoreThanOneRule: new H1MoreThanOneRule(),
+    imgWithoutAltAttr: new ImgWithoutAltAttrRule(),
+    aWithoutRelAttr: new AWithoutRelAttrRule(),
+    headerNoTitle: new HeaderNoTitleRule(),
+    headerNoMetaDescriptions: new HeaderNoMetaDescriptionsRule(),
+    headerNoMetaKeywords: new HeaderNoMetaKeywordsRule(),
+    strongMoreThan: new StrongMoreThanRule(),
+    h1MoreThanOne: new H1MoreThanOneRule(),
 }

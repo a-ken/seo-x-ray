@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "npx tsc",
+    "clear": "rm -rf ./dist/*",
     "example": "npx ts-node ./example/example.ts"
   },
   "keywords": [],

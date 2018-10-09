@@ -6,8 +6,6 @@ import makeDir from 'make-dir';
 import { BaseRule, } from './rule';
 import { Console } from 'console';
 
-
-
 export class Scanner {
     private _rules: Array<BaseRule> = [];
     private _defects: Array<string> = [];

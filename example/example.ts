@@ -1,4 +1,4 @@
-import { Rule, RuleResult, Scanner } from './../src';
+import { Rule, RuleResult, BaseRule, Scanner } from './../src';
 import fs from 'fs';
 
 (async () =>{

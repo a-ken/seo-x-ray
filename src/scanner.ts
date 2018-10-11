@@ -46,7 +46,7 @@ export class Scanner {
         } else if (source instanceof fs.ReadStream) {
             stream = source;
         } else {
-            throw new Error('Invalid input source');
+            Promise.reject(new Error('Invalid input source'));
         }
 
         return new Promise((resolve, reject) => {
@@ -65,6 +65,7 @@ export class Scanner {
     async scan(stream: fs.ReadStream): Promise<void>;
     async scan(source: any): Promise<void> {
         try {
+            this._defects = [];
             let html = await this._load(source);
             let $ = cheerio.load(html, {
                 lowerCaseAttributeNames: true,
@@ -93,7 +94,7 @@ export class Scanner {
         } else if (source instanceof fs.WriteStream) {
             stream = source;
         } else {
-            throw new Error('Invalid output source');
+            Promise.reject(new Error('Invalid output source'));
         }
         return new Promise((resolve, reject) => {
             stream.write(message, err => {

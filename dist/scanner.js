@@ -61,7 +61,7 @@ class Scanner {
             stream = source;
         }
         else {
-            throw new Error('Invalid input source');
+            Promise.reject(new Error('Invalid input source'));
         }
         return new Promise((resolve, reject) => {
             let html = '';
@@ -77,6 +77,7 @@ class Scanner {
     scan(source) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
+                this._defects = [];
                 let html = yield this._load(source);
                 let $ = cheerio.load(html, {
                     lowerCaseAttributeNames: true,
@@ -107,7 +108,7 @@ class Scanner {
             stream = source;
         }
         else {
-            throw new Error('Invalid output source');
+            Promise.reject(new Error('Invalid output source'));
         }
         return new Promise((resolve, reject) => {
             stream.write(message, err => {
